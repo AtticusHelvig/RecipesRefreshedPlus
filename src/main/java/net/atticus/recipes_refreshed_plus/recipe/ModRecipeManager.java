@@ -26,7 +26,7 @@ public class ModRecipeManager {
                 }
 
                 if (ModConfigs.GLASS_FROM_BLASTING) {
-                        recipes.add(new BlastingRecipeJsonBuilder()
+                        recipes.add(new SmeltingRecipeJsonBuilder()
                                         .setIdentifier(RecipesRefreshedPlus.MOD_ID, "glass_from_blasting")
                                         .setIngredient(new Tag("smelts_to_glass"))
                                         .setOutput("glass")
@@ -307,6 +307,334 @@ public class ModRecipeManager {
                                 .setOutput("iron_trapdoor")
                                 .setCount(ModConfigs.IRON_TRAPDOOR_COUNT)
                                 .build());
+
+                // PLUS VERSION
+                if (ModConfigs.BEDROCK) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "bedrock")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "netherite_block")
+                                        .addKeyValuePair('A', "reinforced_deepslate")
+                                        .addKeyValuePair('B', "obsidian")
+                                        .makePattern("BAB", "A#A", "BAB")
+                                        .setOutput("bedrock")
+                                        .build());
+                }
+
+                if (ModConfigs.BELL) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "bell")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "stick")
+                                        .addKeyValuePair('A', "gold_ingot")
+                                        .addKeyValuePair('B', "gold_nugget")
+                                        .makePattern("###", " A ", "ABA")
+                                        .setOutput("bell")
+                                        .build());
+                }
+
+                if (ModConfigs.MUSHROOM_BLOCKS) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "brown_mushroom_block")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "brown_mushroom")
+                                        .makePattern("##", "##")
+                                        .setOutput("brown_mushroom_block")
+                                        .build());
+
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "red_mushroom_block")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "red_mushroom")
+                                        .makePattern("##", "##")
+                                        .setOutput("red_mushroom_block")
+                                        .build());
+                }
+
+                if (ModConfigs.BUDDING_AMETHYST) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "budding_amethyst")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "amethyst_block")
+                                        .addKeyValuePair('A', "amethyst_shard")
+                                        .makePattern("A#A", "#A#", "A#A")
+                                        .setOutput("budding_amethyst")
+                                        .build());
+                }
+
+                if (ModConfigs.CHAIN_ARMOR) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "chainmail_boots")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "chain")
+                                        .makePattern("# #", "# #")
+                                        .setOutput("chainmail_boots")
+                                        .build());
+
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "chainmail_chestplate")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "chain")
+                                        .makePattern("# #", "###", "###")
+                                        .setOutput("chainmail_chestplate")
+                                        .build());
+
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "chainmail_helmet")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "chain")
+                                        .makePattern("###", "# #")
+                                        .setOutput("chainmail_helmet")
+                                        .build());
+
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "chainmail_leggings")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "chain")
+                                        .makePattern("###", "# #", "# #")
+                                        .setOutput("chainmail_leggings")
+                                        .build());
+                }
+
+                if (ModConfigs.COBWEB) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "cobweb")
+                                        .setCategory("misc")
+                                        .addKeyValuePair('#', "string")
+                                        .makePattern("# #", " # ", "# #")
+                                        .setOutput("cobweb")
+                                        .build());
+                }
+
+                if (ModConfigs.CRYING_OBSIDIAN) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "crying_obsidian")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "obsidian")
+                                        .addKeyValuePair('A', "ghast_tear")
+                                        .makePattern("###", "#A#", "###")
+                                        .setOutput("crying_obsidian")
+                                        .build());
+                }
+
+                if (ModConfigs.DEAD_BUSH) {
+                        recipes.add(new ShapelessRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "dead_bush")
+                                        .addSingleIngredient(new Tag("saplings"))
+                                        .setOutput("dead_bush")
+                                        .build());
+                }
+
+                if (ModConfigs.DEBUG_STICK) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "debug_stick")
+                                        .setCategory("misc")
+                                        .addKeyValuePair('#', "stick")
+                                        .addKeyValuePair('A', "netherite_ingot")
+                                        .addKeyValuePair('B', "nether_star")
+                                        .makePattern(" A ", "B#B", " A ")
+                                        .setOutput("debug_stick")
+                                        .build());
+                }
+
+                if (ModConfigs.HORSE_ARMOR) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "diamond_horse_armor")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "diamond")
+                                        .addKeyValuePair('A', "leather")
+                                        .makePattern("  #", "#A#", "###")
+                                        .setOutput("diamond_horse_armor")
+                                        .build());
+
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "golden_horse_armor")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "gold_ingot")
+                                        .addKeyValuePair('A', "leather")
+                                        .makePattern("  #", "#A#", "###")
+                                        .setOutput("golden_horse_armor")
+                                        .build());
+
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "iron_horse_armor")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "iron_ingot")
+                                        .addKeyValuePair('A', "leather")
+                                        .makePattern("  #", "#A#", "###")
+                                        .setOutput("iron_horse_armor")
+                                        .build());
+                }
+
+                if (ModConfigs.ENCHANTED_GOLDEN_APPLE) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "enchanted_golden_apple")
+                                        .setCategory("misc")
+                                        .addKeyValuePair('#', "golden_apple")
+                                        .addKeyValuePair('A', "gold_block")
+                                        .addKeyValuePair('B', "nether_star")
+                                        .makePattern("ABA", "A#A", "AAA")
+                                        .setOutput("enchanted_golden_apple")
+                                        .build());
+                }
+
+                if (ModConfigs.END_PORTAL_FRAME) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "end_portal_frame")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "end_stone")
+                                        .addKeyValuePair('A', "ender_eye")
+                                        .addKeyValuePair('B', "netherite_ingot")
+                                        .makePattern(" B ", "A#A", "###")
+                                        .setOutput("end_portal_frame")
+                                        .build());
+                }
+
+                if (ModConfigs.GLOW_INK_SAC) {
+                        recipes.add(new ShapelessRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "glow_ink_sac")
+                                        .addSingleIngredient("glowstone_dust")
+                                        .addSingleIngredient("ink_sac")
+                                        .setOutput("glow_ink_sac")
+                                        .build());
+                }
+
+                if (ModConfigs.GLOW_LICHEN) {
+                        recipes.add(new ShapelessRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "glow_lichen")
+                                        .addSingleIngredient("glowstone_dust")
+                                        .addSingleIngredient("vine")
+                                        .setOutput("glow_lichen")
+                                        .build());
+                }
+
+                if (ModConfigs.GLOWSTONE_DUST) {
+                        recipes.add(new ShapelessRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "glowstone_dust")
+                                        .addSingleIngredient("glow_berries")
+                                        .setOutput("glowstone_dust")
+                                        .build());
+                }
+
+                if (ModConfigs.GRASS_BLOCK) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "grass_block")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "moss_carpet")
+                                        .addKeyValuePair('A', "dirt")
+                                        .makePattern("#", "A")
+                                        .setOutput("grass_block")
+                                        .build());
+                }
+
+                if (ModConfigs.LEATHER_FROM_SMELTING_ROTTEN_FLESH) {
+                        recipes.add(new SmeltingRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID,
+                                                        "leather_from_smelting_rotten_flesh")
+                                        .setCategory("misc")
+                                        .setIngredient("rotten_flesh")
+                                        .setXp(0.1f)
+                                        .setOutput("leather")
+                                        .build());
+
+                        recipes.add(new BlastingRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID,
+                                                        "leather_from_blasting_rotten_flesh")
+                                        .setCategory("misc")
+                                        .setIngredient("rotten_flesh")
+                                        .setXp(0.1f)
+                                        .setOutput("leather")
+                                        .build());
+                }
+
+                if (ModConfigs.MUSHROOM_STEM) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "mushroom_stem")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "red_mushroom")
+                                        .addKeyValuePair('A', "brown_mushroom")
+                                        .makePattern("#A", "A#")
+                                        .setOutput("mushroom_stem")
+                                        .build());
+                }
+
+                if (ModConfigs.NAME_TAG) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "name_tag")
+                                        .setCategory("misc")
+                                        .addKeyValuePair('#', "string")
+                                        .addKeyValuePair('A', "iron_ingot")
+                                        .addKeyValuePair('B', "ink_sac")
+                                        .makePattern("#", "A", "B")
+                                        .setOutput("name_tag")
+                                        .build());
+                }
+
+                if (ModConfigs.POINTED_DRIPSTONE_FROM_STONECUTTING) {
+                        recipes.add(new StonecutterRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID,
+                                                        "pointed_dripstone_from_stonecutting_dripstone_block")
+                                        .setIngredient("dripstone_block")
+                                        .setOutput("pointed_dripstone")
+                                        .build());
+                }
+
+                if (ModConfigs.REINFORCED_DEEPSLATE) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "reinforced_deepslate")
+                                        .setCategory("building")
+                                        .addKeyValuePair('#', "deepslate")
+                                        .addKeyValuePair('A', "obsidian")
+                                        .makePattern("###", "#A#", "###")
+                                        .setOutput("reinforced_deepslate")
+                                        .build());
+                }
+
+                if (ModConfigs.SADDLE) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "saddle")
+                                        .setCategory("equipment")
+                                        .addKeyValuePair('#', "iron_ingot")
+                                        .addKeyValuePair('A', "leather")
+                                        .addKeyValuePair('B', "string")
+                                        .makePattern("AAA", " B ", " # ")
+                                        .setOutput("saddle")
+                                        .build());
+                }
+
+                if (ModConfigs.SCULK_SENSOR) {
+                        recipes.add(new ShapedRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "sculk_sensor")
+                                        .setCategory("redstone")
+                                        .addKeyValuePair('#', "ender_pearl")
+                                        .addKeyValuePair('A', "glow_ink_sac")
+                                        .addKeyValuePair('B', "repeater")
+                                        .makePattern("A A", "#B#")
+                                        .setOutput("sculk_sensor")
+                                        .build());
+                }
+
+                if (ModConfigs.SHROOMLIGHT) {
+                        recipes.add(new ShapelessRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "shroomlight")
+                                        .addMultiIngredient(
+                                                        List.of(
+                                                                        new Item("mushroom_stem"),
+                                                                        new Item("red_mushroom_block"),
+                                                                        new Item("brown_mushroom_block")))
+                                        .addSingleIngredient("glowstone")
+                                        .setOutput("shroomlight")
+                                        .build());
+                }
+
+                if (ModConfigs.STRING) {
+                        recipes.add(new ShapelessRecipeJsonBuilder()
+                                        .setIdentifier(RecipesRefreshedPlus.MOD_ID, "string")
+                                        .addSingleIngredient(new Tag("wool"))
+                                        .setOutput("string")
+                                        .setCount(4)
+                                        .build());
+                }
 
                 RecipesRefreshedPlus.LOGGER.info("Recipes Loaded");
         }
