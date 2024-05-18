@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "recipes_refreshed_plus",
+	"version": "${version}",
+	"name": "Recipes Refreshed Plus",
+	"description": "Because we want it all.",
+	"authors": [
+		"A. Helvig"
+	],
+	"contact": {
+		"homepage": "https://www.modrinth.com/datapack/recipes-refreshed-plus",
+		"sources": "https://github.com/AtticusHelvig/RecipesRefreshedPlus"
+	},
+	"license": "MIT",
+	"icon": "assets/recipes_refreshed_plus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.atticus.recipes_refreshed_plus.RecipesRefreshedPlus"
+		]
+	},
+	"mixins": [
+		"recipes_refreshed_plus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {}
+}
